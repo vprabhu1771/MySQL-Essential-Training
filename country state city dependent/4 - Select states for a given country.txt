@@ -1,0 +1,46 @@
+Select states for a given country (replace 4 with the actual country ID):
+
+SELECT * FROM states WHERE country_id = 4;
+
++----+-----------------------------+------------+
+| id | name                        | country_id |
++----+-----------------------------+------------+
+|  1 | Andaman and Nicobar Islands |          4 |
+|  2 | Andhra Pradesh              |          4 |
+|  3 | Arunachal Pradesh           |          4 |
+|  4 | Assam                       |          4 |
+|  5 | Bihar                       |          4 |
+|  6 | Chhattisgarh                |          4 |
+|  7 | Chandigarh                  |          4 |
+|  8 | Dadra and Nagar Haveli      |          4 |
+|  9 | Daman and Diu               |          4 |
+| 10 | Delhi                       |          4 |
+| 11 | Goa                         |          4 |
+| 12 | Gujarat                     |          4 |
+| 13 | Haryana                     |          4 |
+| 14 | Himachal Pradesh            |          4 |
+| 15 | Jammu and Kashmir           |          4 |
+| 16 | Jharkhand                   |          4 |
+| 17 | Karnataka                   |          4 |
+| 18 | Kerala                      |          4 |
+| 19 | Ladakh                      |          4 |
+| 20 | Lakshadweep                 |          4 |
+| 21 | Madhya Pradesh              |          4 |
+| 22 | Maharashtra                 |          4 |
+| 23 | Manipur                     |          4 |
+| 24 | Meghalaya                   |          4 |
+| 25 | Mizoram                     |          4 |
+| 26 | Nagaland                    |          4 |
+| 27 | Odisha                      |          4 |
+| 28 | Punjab                      |          4 |
+| 29 | Pondicherry                 |          4 |
+| 30 | Rajasthan                   |          4 |
+| 31 | Sikkim                      |          4 |
+| 32 | Tamil Nadu                  |          4 |
+| 33 | Telangana                   |          4 |
+| 34 | Tripura                     |          4 |
+| 35 | Uttar Pradesh               |          4 |
+| 36 | Uttarakhand                 |          4 |
+| 37 | West Bengal                 |          4 |
++----+-----------------------------+------------+
+37 rows in set (0.000 sec)

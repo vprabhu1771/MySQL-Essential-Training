@@ -1,0 +1,11 @@
+SELECT * FROM countries;
+
++----+--------------------------+------+
+| id | name                     | code |
++----+--------------------------+------+
+|  1 | United States of America | USA  |
+|  2 | Canada                   | CAN  |
+|  3 | United Kingdom           | UK   |
+|  4 | India                    | IND  |
++----+--------------------------+------+
+4 rows in set (0.002 sec)

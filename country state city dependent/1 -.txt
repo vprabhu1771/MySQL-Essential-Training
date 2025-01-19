@@ -1,0 +1,82 @@
+-- Create countries table
+CREATE TABLE countries (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL
+);
+
+-- Create states table
+CREATE TABLE states (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    country_id INT,
+    FOREIGN KEY (country_id) REFERENCES countries(id)
+);
+
+-- Create cities table
+CREATE TABLE cities (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    state_id INT,
+    FOREIGN KEY (state_id) REFERENCES states(id)
+);
+
+-- Insert sample data into countries table
+INSERT INTO countries (name, code) VALUES
+    ('United States of America', 'USA'),
+    ('Canada', 'CAN'),
+    ('United Kingdom', 'UK'),
+    ('India','IND');
+
+-- Insert sample data into states table
+INSERT INTO states (name, country_id) VALUES
+    ('Andaman and Nicobar Islands', 4),
+    ('Andhra Pradesh', 4),
+    ('Arunachal Pradesh', 4),
+    ('Assam', 4),
+    ('Bihar', 4),
+    ('Chhattisgarh', 4),
+    ('Chandigarh', 4),
+    ('Dadra and Nagar Haveli', 4),
+    ('Daman and Diu', 4),
+    ('Delhi', 4),
+    ('Goa', 4),
+    ('Gujarat', 4),
+    ('Haryana', 4),
+    ('Himachal Pradesh', 4),
+    ('Jammu and Kashmir', 4),
+    ('Jharkhand', 4),
+    ('Karnataka', 4),
+    ('Kerala', 4),
+    ('Ladakh', 4),
+    ('Lakshadweep', 4),
+    ('Madhya Pradesh', 4),
+    ('Maharashtra', 4),
+    ('Manipur', 4),
+    ('Meghalaya', 4),
+    ('Mizoram', 4),
+    ('Nagaland', 4),
+    ('Odisha', 4),
+    ('Punjab', 4),
+    ('Pondicherry', 4),
+    ('Rajasthan', 4),
+    ('Sikkim', 4),
+    ('Tamil Nadu', 4),
+    ('Telangana', 4),
+    ('Tripura', 4),
+    ('Uttar Pradesh', 4),
+    ('Uttarakhand', 4),
+    ('West Bengal', 4);
+
+-- Insert sample data into cities table
+INSERT INTO cities (name, state_id) VALUES
+    ('Ariyalur', 32),  
+    ('Chengalpattu', 32),  
+    ('Chennai', 32),
+    ('Coimbatore', 32),
+    ('Cuddalore', 32),
+    ('Dharmapuri', 32),
+    ('Dindigul', 32),
+    ('Erode', 32),
+    ('Kallakurichi', 32),
+    ('Kancheepuram', 32);

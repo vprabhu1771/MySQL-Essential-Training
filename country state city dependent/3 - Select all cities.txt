@@ -1,0 +1,17 @@
+SELECT * FROM cities;
+
++----+--------------+----------+
+| id | name         | state_id |
++----+--------------+----------+
+|  1 | Ariyalur     |       32 |
+|  2 | Chengalpattu |       32 |
+|  3 | Chennai      |       32 |
+|  4 | Coimbatore   |       32 |
+|  5 | Cuddalore    |       32 |
+|  6 | Dharmapuri   |       32 |
+|  7 | Dindigul     |       32 |
+|  8 | Erode        |       32 |
+|  9 | Kallakurichi |       32 |
+| 10 | Kancheepuram |       32 |
++----+--------------+----------+
+10 rows in set (0.001 sec)

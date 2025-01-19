@@ -1,0 +1,37 @@
+Certainly! Here's an example of how you can make a POST request using Postman to place an order using the API:
+
+1. Start the Java Spring application and ensure it's running on the specified port (e.g., `localhost:8080`).
+
+2. Open Postman and create a new request.
+
+3. Set the request URL to `http://localhost:8080/api/orders`.
+
+4. Set the request method to `POST`.
+
+5. In the request body tab, select `raw` and set the content type to `JSON`.
+
+6. Construct a JSON payload similar to the following example:
+
+```json
+{
+  "userId": 1,
+  "orderItems": [
+    {
+      "productId": 1,
+      "quantity": 2
+    },
+    {
+      "productId": 2,
+      "quantity": 1
+    }
+  ]
+}
+```
+
+In this example, we are placing an order for user with ID `1` and adding two order items. Each order item consists of a product ID and the quantity.
+
+7. Click on the "Send" button to make the request.
+
+8. You should receive a response with the order details, including the order ID and the total amount.
+
+Please note that you may need to adjust the request URL and payload based on your specific configuration and requirements.

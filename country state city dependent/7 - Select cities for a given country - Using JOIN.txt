@@ -1,0 +1,16 @@
+SELECT cities.*, states.name AS state_name, countries.name AS country_name FROM cities JOIN states ON cities.state_id = states.id JOIN countries ON states.country_id = countries.id WHERE cities.state_id = 32;
++----+--------------+----------+------------+--------------+
+| id | name         | state_id | state_name | country_name |
++----+--------------+----------+------------+--------------+
+|  1 | Ariyalur     |       32 | Tamil Nadu | India        |
+|  2 | Chengalpattu |       32 | Tamil Nadu | India        |
+|  3 | Chennai      |       32 | Tamil Nadu | India        |
+|  4 | Coimbatore   |       32 | Tamil Nadu | India        |
+|  5 | Cuddalore    |       32 | Tamil Nadu | India        |
+|  6 | Dharmapuri   |       32 | Tamil Nadu | India        |
+|  7 | Dindigul     |       32 | Tamil Nadu | India        |
+|  8 | Erode        |       32 | Tamil Nadu | India        |
+|  9 | Kallakurichi |       32 | Tamil Nadu | India        |
+| 10 | Kancheepuram |       32 | Tamil Nadu | India        |
++----+--------------+----------+------------+--------------+
+10 rows in set (0.000 sec)

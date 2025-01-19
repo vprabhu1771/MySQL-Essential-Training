@@ -1,0 +1,41 @@
+Certainly! Based on the updated requirement to establish a relationship between the Category and Product entities, we can modify the database design as follows:
+
+User table:
+| User ID | Username | Password | Email           | Address          |
+|---------|----------|----------|-----------------|------------------|
+| 1       | johndoe  | password | john@example.com | 123 Main Street  |
+| 2       | janedoe  | password | jane@example.com | 456 Elm Avenue   |
+
+Category table:
+| Category ID | Name      | Description                   |
+|-------------|-----------|-------------------------------|
+| 1           | Clothing  | Apparel for men and women     |
+| 2           | Footwear  | Shoes for men and women       |
+
+Product table:
+| Product ID | Name        | Description                  | Price | Quantity | Category ID |
+|------------|-------------|------------------------------|-------|----------|-------------|
+| 1          | T-shirt     | High-quality cotton t-shirt  | 19.99 | 50       | 1           |
+| 2          | Jeans       | Denim jeans for men          | 39.99 | 30       | 1           |
+| 3          | Sneakers    | Classic white sneakers       | 29.99 | 20       | 2           |
+
+Order table:
+| Order ID | User ID | Order Date  | Status   | Total Amount |
+|----------|---------|-------------|----------|--------------|
+| 1        | 1       | 2023-07-10  | Shipped  | 59.98        |
+| 2        | 2       | 2023-07-12  | Pending  | 39.99        |
+
+Order Item table:
+| Order Item ID | Order ID | Product ID | Quantity | Price |
+|---------------|----------|------------|----------|-------|
+| 1             | 1        | 1          | 2        | 19.99 |
+| 2             | 1        | 2          | 1        | 39.99 |
+| 3             | 2        | 3          | 1        | 29.99 |
+
+Payment table:
+| Payment ID | Order ID | Payment Method | Transaction Details        |
+|------------|----------|----------------|----------------------------|
+| 1          | 1        | Credit Card    | xxxxxxxxxxxx1234           |
+| 2          | 2        | PayPal         | jane@example.com - 2023-07 |
+
+In the updated design, the Product table includes a new column "Category ID," which serves as a foreign key referencing the Category ID in the Category table. This establishes a relationship between the two entities, allowing products to be associated with their respective categories.

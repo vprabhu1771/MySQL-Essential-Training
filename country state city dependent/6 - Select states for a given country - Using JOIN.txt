@@ -1,0 +1,88 @@
+SELECT states.*, countries.name as country_name FROM states JOIN countries ON states.country_id = countries.id WHERE states.country_id = 4;
++----+-----------------------------+------------+--------------+
+| id | name                        | country_id | country_name |
++----+-----------------------------+------------+--------------+
+|  1 | Andaman and Nicobar Islands |          4 | India        |
+|  2 | Andhra Pradesh              |          4 | India        |
+|  3 | Arunachal Pradesh           |          4 | India        |
+|  4 | Assam                       |          4 | India        |
+|  5 | Bihar                       |          4 | India        |
+|  6 | Chhattisgarh                |          4 | India        |
+|  7 | Chandigarh                  |          4 | India        |
+|  8 | Dadra and Nagar Haveli      |          4 | India        |
+|  9 | Daman and Diu               |          4 | India        |
+| 10 | Delhi                       |          4 | India        |
+| 11 | Goa                         |          4 | India        |
+| 12 | Gujarat                     |          4 | India        |
+| 13 | Haryana                     |          4 | India        |
+| 14 | Himachal Pradesh            |          4 | India        |
+| 15 | Jammu and Kashmir           |          4 | India        |
+| 16 | Jharkhand                   |          4 | India        |
+| 17 | Karnataka                   |          4 | India        |
+| 18 | Kerala                      |          4 | India        |
+| 19 | Ladakh                      |          4 | India        |
+| 20 | Lakshadweep                 |          4 | India        |
+| 21 | Madhya Pradesh              |          4 | India        |
+| 22 | Maharashtra                 |          4 | India        |
+| 23 | Manipur                     |          4 | India        |
+| 24 | Meghalaya                   |          4 | India        |
+| 25 | Mizoram                     |          4 | India        |
+| 26 | Nagaland                    |          4 | India        |
+| 27 | Odisha                      |          4 | India        |
+| 28 | Punjab                      |          4 | India        |
+| 29 | Pondicherry                 |          4 | India        |
+| 30 | Rajasthan                   |          4 | India        |
+| 31 | Sikkim                      |          4 | India        |
+| 32 | Tamil Nadu                  |          4 | India        |
+| 33 | Telangana                   |          4 | India        |
+| 34 | Tripura                     |          4 | India        |
+| 35 | Uttar Pradesh               |          4 | India        |
+| 36 | Uttarakhand                 |          4 | India        |
+| 37 | West Bengal                 |          4 | India        |
++----+-----------------------------+------------+--------------+
+37 rows in set (0.000 sec)
+
+
+ SELECT states.*, countries.* FROM states JOIN countries ON states.country_id = countries.id WHERE states.country_id = 4;
++----+-----------------------------+------------+----+-------+------+
+| id | name                        | country_id | id | name  | code |
++----+-----------------------------+------------+----+-------+------+
+|  1 | Andaman and Nicobar Islands |          4 |  4 | India | IND  |
+|  2 | Andhra Pradesh              |          4 |  4 | India | IND  |
+|  3 | Arunachal Pradesh           |          4 |  4 | India | IND  |
+|  4 | Assam                       |          4 |  4 | India | IND  |
+|  5 | Bihar                       |          4 |  4 | India | IND  |
+|  6 | Chhattisgarh                |          4 |  4 | India | IND  |
+|  7 | Chandigarh                  |          4 |  4 | India | IND  |
+|  8 | Dadra and Nagar Haveli      |          4 |  4 | India | IND  |
+|  9 | Daman and Diu               |          4 |  4 | India | IND  |
+| 10 | Delhi                       |          4 |  4 | India | IND  |
+| 11 | Goa                         |          4 |  4 | India | IND  |
+| 12 | Gujarat                     |          4 |  4 | India | IND  |
+| 13 | Haryana                     |          4 |  4 | India | IND  |
+| 14 | Himachal Pradesh            |          4 |  4 | India | IND  |
+| 15 | Jammu and Kashmir           |          4 |  4 | India | IND  |
+| 16 | Jharkhand                   |          4 |  4 | India | IND  |
+| 17 | Karnataka                   |          4 |  4 | India | IND  |
+| 18 | Kerala                      |          4 |  4 | India | IND  |
+| 19 | Ladakh                      |          4 |  4 | India | IND  |
+| 20 | Lakshadweep                 |          4 |  4 | India | IND  |
+| 21 | Madhya Pradesh              |          4 |  4 | India | IND  |
+| 22 | Maharashtra                 |          4 |  4 | India | IND  |
+| 23 | Manipur                     |          4 |  4 | India | IND  |
+| 24 | Meghalaya                   |          4 |  4 | India | IND  |
+| 25 | Mizoram                     |          4 |  4 | India | IND  |
+| 26 | Nagaland                    |          4 |  4 | India | IND  |
+| 27 | Odisha                      |          4 |  4 | India | IND  |
+| 28 | Punjab                      |          4 |  4 | India | IND  |
+| 29 | Pondicherry                 |          4 |  4 | India | IND  |
+| 30 | Rajasthan                   |          4 |  4 | India | IND  |
+| 31 | Sikkim                      |          4 |  4 | India | IND  |
+| 32 | Tamil Nadu                  |          4 |  4 | India | IND  |
+| 33 | Telangana                   |          4 |  4 | India | IND  |
+| 34 | Tripura                     |          4 |  4 | India | IND  |
+| 35 | Uttar Pradesh               |          4 |  4 | India | IND  |
+| 36 | Uttarakhand                 |          4 |  4 | India | IND  |
+| 37 | West Bengal                 |          4 |  4 | India | IND  |
++----+-----------------------------+------------+----+-------+------+
+37 rows in set (0.000 sec)
