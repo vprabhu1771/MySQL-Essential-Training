@@ -1,0 +1,37 @@
+Certainly! To retrieve all sale items for a specific sale along with product details, you can use a `JOIN` query. Below is an example SQL query that retrieves sale items for a specific sale, including details about the associated products:
+
+```sql
+-- Assuming you know the sale_id for the specific sale, let's say sale_id = 1
+SELECT
+    sale_items.id AS sale_item_id,
+    products.id AS product_id,
+    products.name AS product_name,
+    sale_items.quantity,
+    sale_items.price
+FROM
+    sale_items
+JOIN
+    products ON sale_items.product_id = products.id
+WHERE
+    sale_items.sale_id = 1;
+```
+
+This query performs an inner join between the `sale_items` and `products` tables based on the `product_id` foreign key. It selects relevant information from both tables for the specified `sale_id` (in this case, `sale_id = 1`). Adjust the `WHERE` clause accordingly to match the specific sale you are interested in.
+
+The selected columns include:
+
+- `sale_items.id`: Sale item ID
+- `products.id`: Product ID
+- `products.name`: Product name
+- `sale_items.quantity`: Quantity of the product in the sale
+- `sale_items.price`: Price of the product in the sale
+
+Feel free to customize the query based on the specific information you need or add additional conditions as necessary.
+
++--------------+------------+--------------+----------+---------+
+| sale_item_id | product_id | product_name | quantity | price   |
++--------------+------------+--------------+----------+---------+
+|            1 |          1 | Laptop       |        2 | 2400.00 |
+|            2 |          3 | T-Shirt      |        3 |   75.00 |
++--------------+------------+--------------+----------+---------+
+2 rows in set (0.001 sec)
