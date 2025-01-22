@@ -1,0 +1,49 @@
+CREATE TABLE `category` (
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(255),
+`created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO `category` (`name`) VALUES ('Desktop'), ('Laptop'), ('Speaker'), ('Modem'), ('Pendrive'), ('External Harddisk');
+
+
+Ascending Order 1 - 10
+
+SELECT * FROM `category` ORDER BY `id` ASC;
+
+Ascending Order a - z
+
+SELECT * FROM `category` ORDER BY `name` ASC;
+
+
+Decending Order 10 - 1
+
+SELECT * FROM `category` ORDER BY `id` DESC;
+
+Decending Order z - a
+
+SELECT * FROM `category` ORDER BY `name` DESC;
+
+
+SELECT * FROM `category`;
+
+SELECT `id` FROM `category`;
+
+SELECT `name` FROM `category`;
+
+SELECT `name`, `id` FROM `category`;
+
+SELECT COUNT(*) FROM `category`;
+
+
+Search String Starting
+
+SELECT * FROM `category` WHERE `name` LIKE 'l%';
+
+Search String Ending
+
+SELECT * FROM `category` WHERE `name` LIKE '%p';
+
+Search String Inbetween
+SELECT * FROM `category` WHERE `name` LIKE '%t%';

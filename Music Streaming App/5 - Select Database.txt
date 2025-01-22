@@ -1,0 +1,2 @@
+MariaDB [(none)]> USE `music`;
+Database changed

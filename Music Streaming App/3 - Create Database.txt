@@ -1,0 +1,2 @@
+MariaDB [(none)]> CREATE DATABASE `music`;
+Query OK, 1 row affected (0.001 sec)

@@ -1,0 +1,20 @@
+CREATE TABLE `song` (
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`genres_id` INT,
+`name` VARCHAR(255),
+`uploaded_path` VARCHAR(255),
+`created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO `song` (`name`, `uploaded_path`) VALUES ('ABCD', 'C:\abcd.mp3'), ('xyz', 'C:\xyz.mp3');
+
+SELECT * FROM `song`
+INNER JOIN `genres` ON `song`.`genres_id` = `genres`.`id`;
+
+
+SELECT 
+`genres`.`name` AS `genres`, 
+`song`.`name` AS `Song Name`,
+`song`.`uploaded_path` FROM `song` 
+INNER JOIN `genres` ON `song`.`genres_id` = `genres`.`id`;

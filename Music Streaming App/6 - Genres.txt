@@ -1,0 +1,110 @@
+MariaDB [music]> CREATE TABLE `genres` (
+    -> `id` INT PRIMARY KEY AUTO_INCREMENT,
+    -> `name` VARCHAR(255),
+    -> `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    -> `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    -> );
+Query OK, 0 rows affected (0.018 sec)
+
+
+
+MariaDB [music]> INSERT INTO `genres` (`name`) VALUES ('Pop music');
+Query OK, 1 row affected (0.014 sec)
+
+OR
+
+MariaDB [music]> INSERT INTO `genres` (`name`) VALUES ('Rock'), ('Popular music'), ('Electronic music'), ('Hip hop music'), ('Jazz'), ('Country Music'), ('Rhythm and blues');
+Query OK, 7 rows affected (0.013 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+
+MariaDB [music]> SELECT * FROM `genres`;
++----+------------------+---------------------+---------------------+
+| id | name             | created_at          | updated_at          |
++----+------------------+---------------------+---------------------+
+|  1 | Pop music        | 2024-01-22 13:01:07 | 2024-01-22 13:01:07 |
+|  2 | Rock             | 2024-01-22 13:03:24 | 2024-01-22 13:03:24 |
+|  3 | Popular music    | 2024-01-22 13:03:24 | 2024-01-22 13:03:24 |
+|  4 | Electronic music | 2024-01-22 13:03:24 | 2024-01-22 13:03:24 |
+|  5 | Hip hop music    | 2024-01-22 13:03:24 | 2024-01-22 13:03:24 |
+|  6 | Jazz             | 2024-01-22 13:03:24 | 2024-01-22 13:03:24 |
+|  7 | Country Music    | 2024-01-22 13:03:24 | 2024-01-22 13:03:24 |
+|  8 | Rhythm and blues | 2024-01-22 13:03:24 | 2024-01-22 13:03:24 |
++----+------------------+---------------------+---------------------+
+8 rows in set (0.000 sec)
+
+
+MariaDB [music]> SELECT `id`, `name` FROM `genres`;
++----+------------------+
+| id | name             |
++----+------------------+
+|  1 | Pop music        |
+|  2 | Rock             |
+|  3 | Popular music    |
+|  4 | Electronic music |
+|  5 | Hip hop music    |
+|  6 | Jazz             |
+|  7 | Country Music    |
+|  8 | Rhythm and blues |
++----+------------------+
+8 rows in set (0.000 sec)
+
+
+MariaDB [music]> SELECT `name`, `id` FROM `genres`;
++------------------+----+
+| name             | id |
++------------------+----+
+| Pop music        |  1 |
+| Rock             |  2 |
+| Popular music    |  3 |
+| Electronic music |  4 |
+| Hip hop music    |  5 |
+| Jazz             |  6 |
+| Country Music    |  7 |
+| Rhythm and blues |  8 |
++------------------+----+
+8 rows in set (0.000 sec)
+
+
+MariaDB [music]> SELECT `name` FROM `genres`;
++------------------+
+| name             |
++------------------+
+| Pop music        |
+| Rock             |
+| Popular music    |
+| Electronic music |
+| Hip hop music    |
+| Jazz             |
+| Country Music    |
+| Rhythm and blues |
++------------------+
+8 rows in set (0.000 sec)
+
+
+MariaDB [music]> UPDATE `genres` SET `name` = 'Rhythm' WHERE `id` = 8;
+Query OK, 1 row affected (0.013 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+MariaDB [music]> DELETE FROM `genres` WHERE `id` = 1;
+Query OK, 1 row affected (0.013 sec)
+
+
+MariaDB [music]> DELETE FROM `genres` WHERE `name` = 'Rock';
+Query OK, 1 row affected (0.012 sec)
+
+
+It looks like you're trying to construct a SQL query to delete records from a table named `genres` where the `name` column starts with the string 'music'. Your query seems correct and should work, assuming you have a table named `genres` and a column named `name`. Just make sure you have appropriate permissions to perform the delete operation.
+
+Here's the breakdown of your query:
+
+DELETE FROM `genres` WHERE `name` LIKE 'music%';
+
+- `DELETE FROM` specifies that you want to delete records from a table.
+- `genres` is the name of the table from which you want to delete records.
+- `WHERE` is a condition that filters the records to be deleted.
+- `name` is the column you are using to filter records.
+- `LIKE 'music%'` specifies the condition for deletion. It will delete records where the `name` column starts with the string 'music'.
+
+Make sure to double-check your database schema and data before executing a delete operation, as it will permanently remove records from the specified table.

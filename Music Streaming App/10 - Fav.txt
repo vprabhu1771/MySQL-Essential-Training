@@ -1,0 +1,35 @@
+CREATE TABLE `user_favorites` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `user_id` INT,
+    `song_id` INT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`song_id`) REFERENCES `song`(`id`)
+);
+
+
+-- Adding a favorite song for a user
+INSERT INTO `user_favorites` (`user_id`, `song_id`) VALUES (1, 2);
+
+-- Retrieving a user's favorite songs
+SELECT * FROM `user_favorites` WHERE `user_id` = 1;
+
+SELECT
+    uf.id AS favorite_id,
+    u.id AS user_id,
+    u.name AS user_name,
+    s.id AS song_id,
+    s.name AS song_name,
+    g.id AS genre_id,
+    g.name AS genre_name
+FROM
+    `user_favorites` uf
+JOIN
+    `users` u ON uf.`user_id` = u.`id`
+JOIN
+    `song` s ON uf.`song_id` = s.`id`
+JOIN
+    `genres` g ON s.`genres_id` = g.`id`
+WHERE
+    u.id = 1; -- Replace 1 with the actual user ID you are interested in

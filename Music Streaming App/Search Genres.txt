@@ -1,0 +1,5 @@
+SELECT * FROM `genres` WHERE `name` LIKE '%r%';
+
+SELECT * FROM `genres` ORDER BY `name` ASC;
+
+SELECT * FROM `genres` ORDER BY `name` DESC;

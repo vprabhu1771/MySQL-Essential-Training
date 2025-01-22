@@ -1,0 +1,2 @@
+MariaDB [(none)]> DROP DATABASE `music`;
+Query OK, 5 rows affected (0.068 sec)

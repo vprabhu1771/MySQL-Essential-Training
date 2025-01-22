@@ -1,0 +1,25 @@
+CREATE TABLE `playlist` (
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`user_id` INT,
+`name` VARCHAR(255),
+`created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO `playlist` (`user_id`, `name`) VALUES (1, 'American Music'), (2, 'Fav song');
+
+SELECT * FROM `playlist`
+INNER JOIN `users` ON `playlist`.`user_id` = `users`.`id`;
+
+SELECT 
+`playlist`.`name` AS `Playlist Name`,
+`users`.`name` AS `user name`
+FROM `playlist`
+INNER JOIN `users` ON `playlist`.`user_id` = `users`.`id`;
+
+SELECT 
+`playlist`.`name` AS `Playlist Name`,
+`users`.`name` AS `user name`
+FROM `playlist`
+INNER JOIN `users` ON `playlist`.`user_id` = `users`.`id`
+WHERE `playlist`.`user_id` = 2;
