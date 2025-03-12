@@ -1,0 +1,7 @@
+```
+CREATE DATABASE `stationery_shop`;
+```
+
+```
+DROP DATABASE `stationery_shop`;
+```
