@@ -36,3 +36,51 @@ INSERT INTO academic_years (name, status, created_at, updated_at) VALUES
 - `NOW()` is used to fill `created_at` and `updated_at` timestamps automatically.
 
 Let me know if you're using a specific enum or want to convert this field to a boolean or ENUM type in SQL.
+
+
+---
+
+Here are useful **`SELECT` queries** for the `academic_years` table based on your schema and seed data:
+
+---
+
+### 🔹 1. **Select all academic years**
+```sql
+SELECT * FROM academic_years;
+```
+
+---
+
+### 🔹 2. **Get only the active academic year**
+```sql
+SELECT * FROM academic_years
+WHERE status = '1';
+```
+
+---
+
+### 🔹 3. **Get inactive academic years**
+```sql
+SELECT * FROM academic_years
+WHERE status = '0';
+```
+
+---
+
+### 🔹 4. **Get academic years ordered by latest created**
+```sql
+SELECT * FROM academic_years
+ORDER BY created_at DESC;
+```
+
+---
+
+### 🔹 5. **Find a specific academic year**
+```sql
+SELECT * FROM academic_years
+WHERE name = '2024-2025';
+```
+
+---
+
+Let me know if you'd like to join this with related tables like `students`, `grades`, or `exams`!
