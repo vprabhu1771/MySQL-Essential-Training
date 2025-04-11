@@ -193,3 +193,114 @@ ORDER BY
 ---
 
 Let me know if you want to filter by a specific group (e.g., only show subjects for `"CS"` group), or want this query in Eloquent (Laravel syntax) too.
+
+
+---
+
+Great! Here's a quick recap and enhancement of the **`SELECT` queries** you can use to retrieve data from your `group_subject` pivot table — including group and subject names.
+
+---
+
+## ✅ 1. All Group–Subject Combinations
+
+```sql
+SELECT 
+    g.name AS group_name,
+    s.name AS subject_name
+FROM 
+    group_subject gs
+JOIN 
+    groups g ON gs.group_id = g.id
+JOIN 
+    subjects s ON gs.subject_id = s.id
+ORDER BY 
+    g.name, s.name;
+```
+
+---
+
+## ✅ 2. Subjects for a Specific Group (e.g., `'BIO'`)
+
+```sql
+SELECT 
+    s.name AS subject_name
+FROM 
+    group_subject gs
+JOIN 
+    groups g ON gs.group_id = g.id
+JOIN 
+    subjects s ON gs.subject_id = s.id
+WHERE 
+    g.name = 'BIO'
+ORDER BY 
+    s.name;
+```
+
+---
+
+## ✅ 3. Groups That Include a Specific Subject (e.g., `'CS'`)
+
+```sql
+SELECT 
+    g.name AS group_name
+FROM 
+    group_subject gs
+JOIN 
+    groups g ON gs.group_id = g.id
+JOIN 
+    subjects s ON gs.subject_id = s.id
+WHERE 
+    s.name = 'CS'
+ORDER BY 
+    g.name;
+```
+
+---
+
+## ✅ 4. All Group–Subject Mappings With Timestamps
+
+```sql
+SELECT 
+    g.name AS group_name,
+    s.name AS subject_name,
+    gs.created_at,
+    gs.updated_at
+FROM 
+    group_subject gs
+JOIN 
+    groups g ON gs.group_id = g.id
+JOIN 
+    subjects s ON gs.subject_id = s.id
+ORDER BY 
+    gs.created_at DESC;
+```
+
+---
+
+## ✅ 5. All Subjects Grouped Under Each Group (Aggregated)
+
+```sql
+SELECT 
+    g.name AS group_name,
+    GROUP_CONCAT(s.name ORDER BY s.name SEPARATOR ', ') AS subjects
+FROM 
+    group_subject gs
+JOIN 
+    groups g ON gs.group_id = g.id
+JOIN 
+    subjects s ON gs.subject_id = s.id
+GROUP BY 
+    g.name
+ORDER BY 
+    g.name;
+```
+
+---
+
+Let me know if you'd like to:
+
+- Convert these queries into **Laravel Eloquent** syntax or **Query Builder**
+- Create **views** or **stored procedures**
+- Output as a **JSON structure** for API use
+
+Happy to help however you need!
