@@ -34,3 +34,70 @@ CREATE TABLE students (
 ```
 
 Let me know if you'd like insert or select SQL for this table as well.
+
+
+---
+
+Sure! Here's the **SQL `INSERT` query** for the `students` table, assuming that the `grades`, `academic_years`, and `groups` tables already contain valid records with matching `id`s.
+
+---
+
+### ✅ Example Insert SQL:
+```sql
+INSERT INTO students (roll_no, name, grade_id, academic_year_id, group_id, created_at, updated_at) VALUES
+('1001', 'Arun Kumar', 1, 1, 1, NOW(), NOW()),
+('1002', 'Priya Sharma', 2, 1, 2, NOW(), NOW()),
+('1003', 'Rahul Verma', 3, 1, 1, NOW(), NOW()),
+('1004', 'Sneha Reddy', 4, 1, 3, NOW(), NOW()),
+('1005', 'Karthik R', 5, 1, 1, NOW(), NOW());
+```
+
+---
+
+### 🔖 Notes:
+- You can change the `grade_id`, `academic_year_id`, and `group_id` values depending on your actual foreign key data.
+- `NOW()` is used to auto-fill `created_at` and `updated_at`.
+
+Would you also like:
+- a **`SELECT` query** (with JOINs to show names from foreign tables)?
+- a **Laravel Seeder** version of this?
+- or a **bulk insert for 50 students** for testing?
+
+
+---
+
+Here’s a **SELECT query** for the `students` table that joins related data from the `grades`, `academic_years`, and `groups` tables — so you can see full details like student name, grade name, academic year, and group name.
+
+---
+
+### ✅ Full Join Query:
+```sql
+SELECT 
+    students.id,
+    students.roll_no,
+    students.name AS student_name,
+    grades.name AS grade_name,
+    academic_years.name AS academic_year,
+    groups.name AS group_name,
+    students.created_at,
+    students.updated_at
+FROM students
+JOIN grades ON students.grade_id = grades.id
+JOIN academic_years ON students.academic_year_id = academic_years.id
+JOIN groups ON students.group_id = groups.id;
+```
+
+---
+
+### 🔍 What it shows:
+- Student ID, roll number, and name
+- Corresponding grade name
+- Academic year name
+- Group name
+- Created & updated timestamps
+
+Let me know if you want:
+- filters (`WHERE` clause) for a specific grade or year
+- pagination (`LIMIT`, `OFFSET`)
+- ordering (e.g., by `roll_no` or `grade`)  
+Happy to tweak it for your use case!
