@@ -42,3 +42,60 @@ INSERT INTO subjects (name, status, created_at, updated_at) VALUES
 - `NOW()` sets current timestamps for both `created_at` and `updated_at`.
 
 Let me know if you’d like the `status` column changed to a boolean or enum in the migration for cleaner logic.
+
+
+---
+
+Here are some useful **`SELECT` SQL queries** for your `subjects` table:
+
+---
+
+### 🔹 1. **Select all subjects**
+```sql
+SELECT * FROM subjects;
+```
+
+---
+
+### 🔹 2. **Select only active subjects (`status = '1'`)**
+```sql
+SELECT * FROM subjects
+WHERE status = '1';
+```
+
+---
+
+### 🔹 3. **Select inactive subjects (`status = '0'`)**
+```sql
+SELECT * FROM subjects
+WHERE status = '0';
+```
+
+---
+
+### 🔹 4. **Find subject by name (e.g., "CS")**
+```sql
+SELECT * FROM subjects
+WHERE name = 'CS';
+```
+
+---
+
+### 🔹 5. **List subjects ordered by most recently added**
+```sql
+SELECT * FROM subjects
+ORDER BY created_at DESC;
+```
+
+---
+
+### 🔹 6. **Count how many subjects are active**
+```sql
+SELECT COUNT(*) AS active_subjects
+FROM subjects
+WHERE status = '1';
+```
+
+---
+
+Let me know if you want to include a `group_id` relationship and filter subjects by group as well.
