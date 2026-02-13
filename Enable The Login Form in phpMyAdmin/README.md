@@ -1,3 +1,9 @@
+#  To enable the login form in phpMyAdmin, Show login screen, Set login enable for phpMyAdmin XAMPP 
+```
+https://www.youtube.com/watch?v=Wsrn1TSg_BU
+```
+
+
 Ah! You want **phpMyAdmin in XAMPP to show the login screen** so you can log in with a username and password instead of auto-login. Here’s the step-by-step way to enable it:
 
 ---
