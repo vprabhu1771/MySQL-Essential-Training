@@ -88,3 +88,6 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('mypass');
 ```
 FLUSH PRIVILEGES;
 ```
+
+![Image](1.PNG)
+![Image](2.PNG)
