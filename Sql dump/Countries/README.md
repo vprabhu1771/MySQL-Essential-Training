@@ -1,3 +1,7 @@
+```
+https://gist.github.com/adhipg/1600028
+```
+
 #  Sql dump of all the Countries, Country Codes, Phone codes. 
 ```sql
 CREATE TABLE IF NOT EXISTS `country` (
